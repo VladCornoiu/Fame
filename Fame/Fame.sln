@@ -21,6 +21,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Fame", "Fame\", "{4A863660-
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "50636"
+		SlnRelativePath = "Fame\"
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
