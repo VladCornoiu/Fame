@@ -1,27 +1,46 @@
-﻿<%@ Master Language="C#" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>F A M E</title>
     <asp:ContentPlaceHolder ID="Head" runat="server">
     </asp:ContentPlaceHolder>
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="Content/StyleSheet.css?v=1.0" />
+    <link rel="stylesheet" type="text/css" href="Content/bootstrap.min.css?v=1.0"/>
+    <script type="text/javascript" src="Content/jquery.min.js?v=1.0"></script>
+    <script type="text/javascript" src="Content/bootstrap.min.js?v=1.0"></script>
+
 </head>
 <body>
-    <form id="form1" runat="server">
-        <div>
-            <asp:ContentPlaceHolder ID="Body" runat="server">
-            </asp:ContentPlaceHolder>
-        </div>
-    </form>
+<form id="form1" runat="server">
+    <nav class="navbar navbar-default">
+         <div class="containter-fluid">
+            <div class="navbar-header">
+             <asp:HyperLink ID="HyperLink1" class="navbar-brand" runat="server" NavigateUrl="~/">F A M E - Forum Application for Movie Enthusiasts</asp:HyperLink>
+             </div>
+             <div style="float: right;">
+                 <asp:LoginView runat="server" ViewStateMode="Disabled">
+                     <AnonymousTemplate>
+                         <asp:Button class="btn btn-link" style="color: grey;" runat="server" Text="Login" OnClick="Login"></asp:Button>
+                         <asp:Button class="btn btn-link" style="color: grey;" runat="server" Text="Register" OnClick="Register"></asp:Button>
+                     </AnonymousTemplate>
+                     <LoggedInTemplate>
+                         Hello, <asp:LoginName id="LogInName1" runat="server"/>
+                         <asp:loginstatus id="LogInStatus1" runat="server"/>
+                         <asp:Button class="btn btn-link" style="color: black;" runat="server" Text="Profile" OnClick="ProfileView"></asp:Button>
+                     </LoggedInTemplate>
+                 </asp:LoginView>
+             </div>
+    </nav>
+    <div>
+        <asp:ContentPlaceHolder ID="Body" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+</form>
 
-    <!-- Javascript -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
 </body>
 </html>
