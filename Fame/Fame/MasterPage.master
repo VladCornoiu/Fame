@@ -35,6 +35,7 @@
                      </LoggedInTemplate>
                  </asp:LoginView>
              </div>
+         </div>
     </nav>
     <div>
         <asp:ContentPlaceHolder ID="Body" runat="server">
